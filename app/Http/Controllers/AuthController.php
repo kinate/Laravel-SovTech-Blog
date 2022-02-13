@@ -17,7 +17,7 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
         if(Auth::attempt(['email'=>$login_data->email,'password'=>$login_data->password])){ 
-            return Redirect::Route('post_list');
+            return Redirect::Route('all-post');
         }
         else{
             return Redirect::Route('login')->with(

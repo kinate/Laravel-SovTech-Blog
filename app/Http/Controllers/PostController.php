@@ -17,12 +17,11 @@ class PostController extends Controller
         return view('posts.post_list')->with('posts',$posts);  
     }
 
-    public function post_details($encrypted_id){
-        
-        $id=\base64_decode($encrypted_id);
-        $post=Post::where('id',$id)->with('user')->first();
+    public function post_details($slug){
+
+        $post=Post::where('slug',$slug)->with('user')->first();
         //Related posts
-        $related_posts=Post::where('category',$post->category)->where('id','!=',$id)->limit(3)->inRandomOrder()->get(); 
+        $related_posts=Post::where('category',$post->category)->where('slug','!=',$slug)->limit(3)->inRandomOrder()->get(); 
         return view('posts.post_details')->with([
             'post'=>$post,
             'related_posts'=>$related_posts,
@@ -62,13 +61,14 @@ class PostController extends Controller
             //-------------------
             $create_post=Post::create([
                 'title'=>$post_data->title,
+                'slug'=>$post_data->slug,
                 'category'=>$post_data->category,
                 'content'=>$post_data->content,
                 'author'=>Auth::user()->id,
                 'image'=>$image_name,
            ]);
            if($create_post){
-                return Redirect::Route('post_list')->with(
+                return Redirect::Route('all-post')->with(
                     'success',
                     'Post created successfully.'
                 );  
@@ -124,6 +124,7 @@ class PostController extends Controller
         
         $update=Post::find($id)->update([
             'title'=>$request->title,
+            'slug'=>$request->slug,
             'content'=>$request->content,
             'category'=>$request->category,
             'image'=>$image_name,
@@ -157,7 +158,7 @@ class PostController extends Controller
         Storage::delete('/public/img/posts/'.$image);
         Post::find($id)->delete();
 
-        return Redirect::route('post_list')->with( 'success','Post deleted successfully!'); 
+        return Redirect::route('all-post')->with( 'success','Post deleted successfully!'); 
         }
         else{
             return Redirect::Route('login')->with('warning','This operation requires Authentication');   

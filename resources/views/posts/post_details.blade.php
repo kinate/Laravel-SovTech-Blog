@@ -71,7 +71,7 @@
                 <img height="80" src="{{asset('storage/img/posts/'.$related_post->image)}}">
 					<div class="pl-3">
 						<h2 class="mb-2 h6 font-weight-bold">
-						<a class="text-dark" href="{{URL::to('post_details',['encrypted_id'=>\base64_encode($related_post->id)])}}">{{$related_post->title}}</a>
+						<a class="text-dark" href="{{URL::to('blog',['slug'=>$related_post->slug])}}">{{$related_post->title}}</a>
 						</h2>
 						<div class="card-text text-muted small">
                         {{$related_post->category}} | Posted by {{$related_post->user->name}}

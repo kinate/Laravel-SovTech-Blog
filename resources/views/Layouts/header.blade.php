@@ -1,26 +1,26 @@
 <nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
 <div class="container">
-	<a class="navbar-brand" href="{{URL::to('index')}}"><strong>Laravel Blog</strong></a>
+	<a class="navbar-brand" href="{{URL::to('home')}}"><strong>SovTech Laravel Blog</strong></a>
 	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
 	<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="navbar-collapse collapse" id="navbarColor02" style="">
 		<ul class="navbar-nav mr-auto d-flex align-items-center">
 			<li class="nav-item">
-			<a class="nav-link" href="{{URL::to('index')}}" style="color:#000; !important">Home <span class="sr-only">(current)</span></a>
+			<a class="nav-link" href="{{URL::to('home')}}" style="color:#000; !important">Home <span class="sr-only">(current)</span></a>
 			</li>
 			
 			<li class="nav-item">
-			<a class="nav-link" href="{{URL::to('post_by_category',['category'=>'Technology'])}}" style="color:#000; !important">Technology</a>
+			<a class="nav-link" href="{{URL::to('category',['category'=>'Technology'])}}" style="color:#000; !important">Technology</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" href="{{URL::to('post_by_category',['category'=>'Politics'])}}" style="color:#000; !important">Politics</a>
+			<a class="nav-link" href="{{URL::to('category',['category'=>'Politics'])}}" style="color:#000; !important">Politics</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" href="{{URL::to('post_by_category',['category'=>'Health'])}}" style="color:#000; !important">Health</a>
+			<a class="nav-link" href="{{URL::to('category',['category'=>'Health'])}}" style="color:#000; !important">Health</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" href="{{url('post_list')}}" style="color:#000; !important">All Post</a>
+			<a class="nav-link" href="{{url('all-posts')}}" style="color:#000; !important">All Post</a>
 			</li>
 			@if(Auth::check())
 			<li class="nav-item"></li>

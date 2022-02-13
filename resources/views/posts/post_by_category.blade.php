@@ -14,14 +14,14 @@
 
             @if($posts->isEmpty())
                 <div class="col-md-12 mt-2" style="color:orange">
-                <i class="icon fas fa-info-circle"></i> No post found for category, please <a href="{{url('login')}}">login</a> to post {{$category}}
+                <i class="icon fas fa-info-circle"></i> No post found for category.
                 </div>
             @else
             @foreach($posts as $post)
 			<div class="mb-3 d-flex justify-content-between">
 				<div class="pr-3">
 					<h2 class="mb-1 h4 font-weight-bold">
-					<a class="text-dark" href="{{URL::to('post_details',['encrypted_id'=>\base64_encode($post->id)])}}">{{$post->title}}</a> 
+					<a class="text-dark" href="{{URL::to('blog',['slug'=>$post->slug])}}">{{$post->title}}</a> 
 					</h2>
                     <!--post description here-->
                     

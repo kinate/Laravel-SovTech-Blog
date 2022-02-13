@@ -39,7 +39,10 @@
                             @include('Layouts.notify')
                             @csrf  
 							<div class="col-md-12 mt-2">
-								<input type="text" name="title" class="form-control" placeholder="Title" value="{{$post->title}}" required>
+								<input type="text" name="title" id="title" class="form-control" placeholder="Title" value="{{$post->title}}" required>
+							</div>
+							<div class="col-md-12 mt-2">
+								<input type="text" id="slug" name="slug" class="form-control" placeholder="Slug" value="{{$post->slug}}"  required readonly>
 							</div>
                             <div class="col-md-12 mt-2">
 								<select name="category" class="form-control" id="">

@@ -12,7 +12,7 @@
 					<p class="mb-3">
 						Say one step ahead, Stay up-to-date. All news at your finger tips.
 					</p>
-					<a href="{{url('post_list')}}" class="btn btn-dark">Read More</a>
+					<a href="{{url('all-posts')}}" class="btn btn-dark">Read More</a>
 				</div>
 				<div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url(./assets/img/home_slide.jpg);">	</div>
 			</div>
@@ -31,7 +31,7 @@
 			<div class="mb-3 d-flex justify-content-between">
 				<div class="pr-3">
 					<h2 class="mb-1 h4 font-weight-bold">
-					<a class="text-dark" href="{{URL::to('post_details',['encrypted_id'=>\base64_encode($post->id)])}}">{{$post->title}}</a>
+					<a class="text-dark" href="{{URL::to('blog',['slug'=>$post->slug])}}">{{$post->title}}</a>
 					</h2>
 					<div class="card-text text-muted small">
                     {{$post->category}} | Posted by {{$post->user->name}}
@@ -51,7 +51,7 @@
 				<li>
 					<span>
 						<h6 class="font-weight-bold">
-						Posts and articles by <a href="{{URL::to('post_by_author',['id'=>\base64_encode($author->id),'author'=>\base64_encode($author->name)])}}">{{$author->name}}</a>
+						Posts and articles by <a href="{{URL::to('author',['id'=>\base64_encode($author->id),'author'=>\base64_encode($author->name)])}}">{{$author->name}}</a>
 						</h6>
 						<p class="text-muted">
 							Post and articles count: <b>{{$author->posts->count()}}</b>

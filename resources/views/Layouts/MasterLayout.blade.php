@@ -38,5 +38,14 @@ JAVASCRIPTS
 <script src="{{asset('./assets/js/vendor/bootstrap.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('./assets/js/functions.js')}}" type="text/javascript"></script>
 @yield('sumernote_js')
+<script>
+//script to add Post slag field automatically
+$('#title').keyup(function(){
+    var str=$('#title').val();
+    str=str.replace(/\W+(?!$)/g, '-').toLowerCase(); //replace space with -
+    $('#slug').val(str);
+    $('#slug').attr('placeholder',str);
+});
+</script>
 </body>
 </html>

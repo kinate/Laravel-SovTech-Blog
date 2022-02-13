@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
         if($seed_user){
              Post::create([
                 'title' => 'A-Z About laravel 9, its features and intresting concepts',
+                'slug' => 'a-z-laravel-9-features-concepts',
                 'category' => 'Technology',
 
                 'content' => 'Sing them over again to me, wonderful words of life,
