@@ -46,14 +46,19 @@ DB_PASSWORD=your_password
 > Then in your terminal type:
 
  - composer install
+ or
+ - composer update
+ > If you have already installed composer
 
-## Database Migration and Seeding
+
+## Database Migration, Seeding and Storage link
 
 In Your Terminal type the following commands for migrating and then seeding the database:
 
  - php artisan migrate --seed
  > this command will create database tables and seed user and post for demo.
-
+ - php artisan storage:link
+ >This command will create storage link in public folder
 ## Running The Demo
 Make Sure You set appropriate permissions for your directory! Permission denied is common case here
 Go to your browser and type the address of the application :
