@@ -19,7 +19,7 @@
 <body>
 
 <!-----NAVBAR-------->
-@include('layouts.header')
+@include('Layouts.header')
 <!-- End Navbar -->
  
 <!------NAVBAR-------->
