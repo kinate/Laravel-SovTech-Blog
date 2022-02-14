@@ -46,7 +46,9 @@ DB_PASSWORD=your_password
 > Then in your terminal type:
 
  - composer install
+
  or
+ 
  - composer update
  > If you have already installed composer
 
