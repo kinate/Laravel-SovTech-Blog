@@ -25,7 +25,7 @@
 			@if(Auth::check())
 			<li class="nav-item"></li>
 			<li class="nav-item highlight">
-			<a class="nav-link" href="{{url('create_post')}}">New Post</a>
+			<a class="nav-link" href="{{url('create-post')}}">New Post</a>
 			</li>
 			@endif
 		         	

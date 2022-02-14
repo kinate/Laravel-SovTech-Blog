@@ -19,9 +19,8 @@
 		</div>
 	</div>
 </div>
-<!-- Page Header -->
-    
-    
+<!--// Page Header -->
+
 <!----------MAIN---------->
 <div class="container">
 	<div class="row justify-content-between">

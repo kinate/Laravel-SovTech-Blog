@@ -2,8 +2,6 @@
 @section('page_title','All Posts')
 @section('page_contents')
 
-
-    
 <!----------MAIN---------->
 <div class="container">
 	<div class="row justify-content-between">
@@ -18,11 +16,10 @@
 					<a class="text-dark" href="{{URL::to('blog',['slug'=>$post->slug])}}">{{$post->title}}</a> 
 					</h2>
                     <!--post description here-->
-                    
                     @if(Auth::check())
                         @if($post->author==Auth::user()->id)
                             <p>   
-                                <a href="{{URL::to('edit_post',['encrypted_id'=>\base64_encode($post->id)])}}">Edit</a>
+                                <a href="{{URL::to('edit-post',['encrypted_id'=>\base64_encode($post->id)])}}">Edit</a>
                                 |
                                 <!-- <a href="{{URL::to('delete_post',['encrypted_id'=>\base64_encode($post->id)])}}">Delete</a>  -->
                                 <a href="#" data-toggle="modal" data-target="#post{{$post->id}}">Delete</a> 
@@ -42,12 +39,8 @@
 			</div>
             @include('posts.delete_notification')
             @endforeach
-           
 		</div>
- 
 	</div>
-
 </div>
-
 @endsection
 

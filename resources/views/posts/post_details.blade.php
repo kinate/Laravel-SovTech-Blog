@@ -42,7 +42,7 @@
             @if(Auth::check())
                 @if($post->author==Auth::user()->id)
                     <p>   
-                        <a href="{{URL::to('edit_post',['encrypted_id'=>\base64_encode($post->id)])}}">Edit</a>
+                        <a href="{{URL::to('edit-post',['encrypted_id'=>\base64_encode($post->id)])}}">Edit</a>
                             |
                         <a href="#" data-toggle="modal" data-target="#post{{$post->id}}">Delete</a>  
                     </p>
@@ -86,7 +86,6 @@
 		</div>
 	</div>
 </div>
-
 <!-- Modal delete notofication -->
 <div class="modal fade" id="post{{$post->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -102,15 +101,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-        <a class="btn btn-danger" href="{{URL::to('delete_post',['encrypted_id'=>\base64_encode($post->id)])}}">Delete</a>
+        <a class="btn btn-danger" href="{{URL::to('delete-post',['encrypted_id'=>\base64_encode($post->id)])}}">Delete</a>
       </div>
     </div>
   </div>
 </div>
 <!-- End Modal delete notofication -->
-
-
-    
-
-
 @endsection

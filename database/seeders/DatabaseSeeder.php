@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         $seed_user=User::create([
             'name' => "Renatus John",
             'email' => 'john@sovtech.com',
-            'password' => Hash::make('12345'),
+            'password' => Hash::make('secret101'),
         ]);
 
         if($seed_user){

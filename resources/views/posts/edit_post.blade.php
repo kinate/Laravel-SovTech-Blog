@@ -20,7 +20,7 @@
 					</div> -->
 					<div class="col-md-12">
                    
-                    <form method="post" action="{{URL::to('update_post_data',['encrypted_id'=>\base64_encode($post->id)])}}" enctype="multipart/form-data"> 
+                    <form method="post" action="{{URL::to('update-post-data',['encrypted_id'=>\base64_encode($post->id)])}}" enctype="multipart/form-data"> 
                         @csrf
 						<div class="row">
                             <div class="col-md-12 mt-2">

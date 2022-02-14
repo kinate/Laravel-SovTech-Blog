@@ -13,7 +13,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-        <a class="btn btn-danger" href="{{URL::to('delete_post',['encrypted_id'=>\base64_encode($post->id)])}}">Delete</a>
+        <a class="btn btn-danger" href="{{URL::to('delete-post',['encrypted_id'=>\base64_encode($post->id)])}}">Delete</a>
       </div>
     </div>
   </div>

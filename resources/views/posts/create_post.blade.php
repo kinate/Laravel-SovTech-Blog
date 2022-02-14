@@ -1,12 +1,10 @@
 @extends('Layouts.MasterLayout')
 @section('page_title','New Post')
 @section('page_contents')
-
 @section('summernote_css')
 <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endsection
-
 <div class="container pt-4 pb-4">
 	<div class="row justify-content-center">
 		
@@ -20,7 +18,7 @@
 					</div> -->
 					<div class="col-md-12">
                     
-                    <form method="post" action="{{URL::to('post_submit')}}" enctype="multipart/form-data"> 
+                    <form method="post" action="{{URL::to('post-submit')}}" enctype="multipart/form-data"> 
                         @csrf
 						<div class="row">
                             <div class="col-md-12 mt-2">
@@ -74,9 +72,7 @@
 		</div>
 	</div>
 </div>
-
 @endsection
-
 @section('sumernote_js')
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script>

@@ -39,11 +39,11 @@ Route::get('logout',[AuthController::class,'logout']);
 //------Post Routes------
 Route::get('all-posts',[PostController::class,'post_list'])->name('all-post');
 Route::get('blog/{slug}',[PostController::class,'post_details'])->name('blog');
-Route::get('create_post',[PostController::class,'create_post'])->name('create_post');
-Route::post('post_submit',[PostController::class,'post_submit'])->name('post_submit');
-Route::get('edit_post/{encrypted_id}',[PostController::class,'edit_post'])->name('edit_post');
-Route::post('update_post_data/{encrypted_id}',[PostController::class,'update_post_data'])->name('update_post_data');
-Route::get('delete_post/{encrypted_id}',[PostController::class,'delete_post'])->name('delete_post');
+Route::get('create-post',[PostController::class,'create_post'])->name('create-post');
+Route::post('post-submit',[PostController::class,'post_submit'])->name('post-submit');
+Route::get('edit-post/{encrypted_id}',[PostController::class,'edit_post'])->name('edit-post');
+Route::post('update-post-data/{encrypted_id}',[PostController::class,'update_post_data'])->name('update-post-data');
+Route::get('delete-post/{encrypted_id}',[PostController::class,'delete_post'])->name('delete-post');
 Route::get('category/{category}',[PostController::class,'post_by_category'])->name('post_by_category');
 Route::get('author/{id}/{author}',[PostController::class,'post_by_author'])->name('author');
 
