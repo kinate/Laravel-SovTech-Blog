@@ -3,6 +3,13 @@
 Full Working Demo is available at :
  http://sovtech-blog.hellencp.com
  
+Demo user 1
+email: john@sovtech.com
+password: secret123
+ 
+Demo user 2
+email: lily@sovtech.com
+password: secret456
 
 ## Table of Contents
 
